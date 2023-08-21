@@ -4,9 +4,7 @@ import com.devcoast.containerplux.model.Container;
 import com.devcoast.containerplux.repository.ContainerRepository;
 import com.devcoast.containerplux.service.ContainerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +19,10 @@ public class ContainerController {
         return containerService.getAllContainers();
     }
 
+    @PostMapping("/containers")
+    public Container saveContainer(@RequestBody Container container){
+        containerService.saveContainer(container);
+        return container;
+    }
 
 }
