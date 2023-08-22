@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 //TODO  : Agregar hora de entrada
 //TODO :  Agregar hora de salida
+//TODO : Agregar nombre de transportista
 
 @Entity(name = "containers")
 public class Container {
@@ -12,25 +13,28 @@ public class Container {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String entryDay;
+    private String entryHour;
     private String outDay;
     private String type;
     private String size;
     private String shippingCompany;
     private String operator;
     private String licencePlate;
+    private String carrier;
 
     public Container() {
-
     }
 
-    public Container(String entryDay, String outDay, String type, String size, String shippingCompany, String operator, String licencePlate ) {
+    public Container(String entryDay, String entryHour, String outDay, String type, String size, String shippingCompany, String operator, String licencePlate, String carrier) {
         this.entryDay = entryDay;
+        this.entryHour = entryHour;
         this.outDay = outDay;
         this.type = type;
         this.size = size;
         this.shippingCompany = shippingCompany;
         this.operator = operator;
         this.licencePlate = licencePlate;
+        this.carrier = carrier;
     }
     public Long getId() {
         return id;
@@ -46,6 +50,14 @@ public class Container {
 
     public void setEntryDay(String entryDay) {
         this.entryDay = entryDay;
+    }
+
+    public String getEntryHour() {
+        return entryHour;
+    }
+
+    public void setEntryHour(String entryHour) {
+        this.entryHour = entryHour;
     }
 
     public String getOutDay() {
@@ -96,4 +108,12 @@ public class Container {
         this.licencePlate = licencePlate;
     }
 
+    public String getCarrier() {
+        return carrier;
+    }
+
+    public void setCarrier(String carrier) {
+        this.carrier = carrier;
+    }
 }
+
