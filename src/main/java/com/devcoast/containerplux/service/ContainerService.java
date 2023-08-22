@@ -15,5 +15,11 @@ public class ContainerService {
         return containerRepository.findAll();
     }
 
-    //TODO : Agregar metoho de servicio para agregar contenedor
+    //TODO : Agregar metodo de servicio para agregar contenedor
+
+    public Container saveContainer(Container container){
+        containerRepository.save(container);
+        return container;
+    }
+
 }
