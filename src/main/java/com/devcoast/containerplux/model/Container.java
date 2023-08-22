@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 //TODO  : Agregar hora de entrada
 //TODO :  Agregar hora de salida
 //TODO : Agregar nombre de transportista
+//TODO : Agregar propiedad estado
 
 @Entity(name = "containers")
 public class Container {
@@ -15,6 +16,7 @@ public class Container {
     private String entryDay;
     private String entryHour;
     private String outDay;
+    private String status;
     private String type;
     private String size;
     private String shippingCompany;
@@ -25,10 +27,11 @@ public class Container {
     public Container() {
     }
 
-    public Container(String entryDay, String entryHour, String outDay, String type, String size, String shippingCompany, String operator, String licencePlate, String carrier) {
+    public Container(String entryDay, String entryHour, String outDay, String status, String type, String size, String shippingCompany, String operator, String licencePlate, String carrier) {
         this.entryDay = entryDay;
         this.entryHour = entryHour;
         this.outDay = outDay;
+        this.status = status;
         this.type = type;
         this.size = size;
         this.shippingCompany = shippingCompany;
@@ -36,6 +39,7 @@ public class Container {
         this.licencePlate = licencePlate;
         this.carrier = carrier;
     }
+
     public Long getId() {
         return id;
     }
@@ -66,6 +70,14 @@ public class Container {
 
     public void setOutDay(String outDay) {
         this.outDay = outDay;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getType() {
