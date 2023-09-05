@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//TODO : Agregar metodo POST para agregar Contenedor
 @CrossOrigin
 @RestController
 public class ContainerController {
