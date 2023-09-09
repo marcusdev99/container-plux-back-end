@@ -19,12 +19,6 @@ public class EnterpriseController {
     @Autowired
     EnterpriseService enterpriseService;
 
-    //Prueba de commit
-
-    //Prueba de otro comentario
-    //Comentario 2
-
-    //Comentario 3
    @GetMapping("/enterprises")
     public ResponseEntity<List<Enterprise>> getAllEnterprises(){
         return new ResponseEntity<>(enterpriseService.getAllEnterprises(), HttpStatus.OK);
