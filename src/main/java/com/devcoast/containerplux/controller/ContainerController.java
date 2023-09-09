@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin
+@CrossOrigin(maxAge = 3600, origins = "http://localhost:3000")
 @RestController
 public class ContainerController {
     @Autowired
