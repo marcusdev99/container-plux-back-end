@@ -20,6 +20,9 @@ public class EnterpriseController {
     EnterpriseService enterpriseService;
 
     //Prueba de commit
+
+    //Prueba de otro comentario
+    //Comentario 2
    @GetMapping("/enterprises")
     public ResponseEntity<List<Enterprise>> getAllEnterprises(){
         return new ResponseEntity<>(enterpriseService.getAllEnterprises(), HttpStatus.OK);
